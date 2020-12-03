@@ -14,6 +14,7 @@ namespace BattleShip.BL.Implementation.Class
         public ShipOrientation Orientation;
         public Dictionary<Point, ShipState> ShipPosition;
         public ShipType Type;
+        public ShipState State;
         public Ship(){
         }
         public Ship(ShipType shipType, ShipOrientation orientation, Point head)
@@ -21,6 +22,7 @@ namespace BattleShip.BL.Implementation.Class
             Type = shipType;
             Orientation = orientation;
             CalculateShipPoints(head);
+            State = ShipState.UnDamaged;
         }
         private void CalculateShipPoints(Point head)
         {

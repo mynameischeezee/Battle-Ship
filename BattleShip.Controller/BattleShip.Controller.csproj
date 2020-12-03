@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +53,10 @@
     <ProjectReference Include="..\BattleShip.BL.Implementation\BattleShip.BL.Implementation.csproj">
       <Project>{EB0F149C-21A1-4499-B63F-5536AC7C1E44}</Project>
       <Name>BattleShip.BL.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BattleShipExceptions\BattleShip.Exceptions.csproj">
+      <Project>{02CED1A5-39F9-40CC-9959-C92DFC61FD0E}</Project>
+      <Name>BattleShip.Exceptions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

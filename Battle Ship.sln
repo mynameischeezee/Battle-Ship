@@ -16,7 +16,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShip.Controller", "Ba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShip.Exceptions", "BattleShipExceptions\BattleShip.Exceptions.csproj", "{02CED1A5-39F9-40CC-9959-C92DFC61FD0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{93F3B1ED-17FC-4742-AAB9-E3ACA9350460}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShip.Tests", "Tests\BattleShip.Tests.csproj", "{93F3B1ED-17FC-4742-AAB9-E3ACA9350460}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
