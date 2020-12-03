@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleShip.BL.Implementation.Class.GameLogic
+namespace BattleShip.BL.Abstarct.Enum
 {
-    public class Game
+    public enum ShipType
     {
-        
+        Huge = 3,
+        Big = 2,
+        Medium = 1,
+        Small = 0
     }
 }

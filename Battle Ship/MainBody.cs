@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BattleShip.BL.Abstarct.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,8 @@ namespace Battle_Ship
     {
         static void Main(string[] args)
         {
-
+            
+            
         }
     }
 }

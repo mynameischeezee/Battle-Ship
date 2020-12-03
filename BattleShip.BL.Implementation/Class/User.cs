@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BattleShip.BL.Implementation.Class
 {
-    class User
+    public class User
     {
+        string Name;
+        Grid PlayerGrid;
+        Grid ShottedGrid;
+        public User() { }
     }
 }

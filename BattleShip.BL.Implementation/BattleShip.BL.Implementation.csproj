@@ -64,5 +64,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BattleShip.BL.Abstarct\BattleShip.BL.Abstarct.csproj">
+      <Project>{c687c658-f6bf-40dc-937c-c359cd8378bd}</Project>
+      <Name>BattleShip.BL.Abstarct</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

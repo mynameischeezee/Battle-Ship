@@ -51,6 +51,7 @@
     <Compile Include="Enum\GameState.cs" />
     <Compile Include="Enum\ShipOrientation.cs" />
     <Compile Include="Enum\ShipState.cs" />
+    <Compile Include="Enum\ShipType.cs" />
     <Compile Include="Interface\IGameConfiguration.cs" />
     <Compile Include="Interface\IGameService.cs" />
     <Compile Include="Interface\IObservable.cs" />
