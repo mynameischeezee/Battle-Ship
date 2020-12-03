@@ -13,21 +13,28 @@ namespace BattleShip.BL.Implementation.Class.GridLogic
         private Grid grid;
         public GridWithShipBuilder()
         {
-            grid = new Grid();
+            this.Reset();
         }
 
-        public override void AddShip(Point point, ShipType shipType, ShipOrientation shipOrientation)
+        public override void AddShip(Point head, ShipType shipType, ShipOrientation shipOrientation)
         {
-            grid.AddShip(new Ship());
+            grid.AddShip(new Ship(shipType, shipOrientation, head));
         }
 
-        public override void CreateGrid(int size)
+        public override Grid CreateGrid(int size)
         {
             grid.CreateBySize(size);
+            return this.ReturnGrid();
         }
 
+        public override void Reset()
+        {
+            this.grid = new Grid();
+        }
         public override Grid ReturnGrid()
         {
+            Grid result = this.grid;
+            this.Reset();
             return this.grid;
         }
     }

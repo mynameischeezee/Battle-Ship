@@ -11,12 +11,10 @@ namespace BattleShip.BL.Implementation.Class.GridLogic
 {
     public abstract class GridBuilder
     {
-        public abstract void CreateGrid(int size);
+        public abstract void Reset();
+        public abstract Grid CreateGrid(int size);
         public abstract void AddShip(Point point, ShipType shipType, ShipOrientation shipOrientation);
         public abstract Grid ReturnGrid();
-        public GridBuilder()
-        {
-
-        }
+        
     }
 }

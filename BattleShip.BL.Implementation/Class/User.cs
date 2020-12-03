@@ -8,9 +8,9 @@ namespace BattleShip.BL.Implementation.Class
 {
     public class User
     {
-        string Name;
-        Grid PlayerGrid;
-        Grid ShottedGrid;
+        public string Name;
+        public Grid PlayerGrid;
+        public Grid ShottedGrid;
         public User() { }
     }
 }

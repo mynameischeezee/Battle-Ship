@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BattleShip.Controller
 {
-    class ConsoleController
+    public class ConsoleController
     {
     }
 }

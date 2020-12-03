@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BattleShip.BL.Abstarct.Enum;
 using BattleShip.BL.Abstarct.Interface;
+using BattleShip.Exceptions;
 
 namespace BattleShip.BL.Implementation.Class
 {
@@ -27,7 +28,7 @@ namespace BattleShip.BL.Implementation.Class
         {
             if (size <= 0)
             {
-                throw new Exception();
+                throw new WrongGridSizeException("Wrong grid size(0 or below given).");
             }
             else
             {

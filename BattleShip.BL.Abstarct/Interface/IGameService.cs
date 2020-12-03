@@ -8,11 +8,14 @@ using System.Drawing;
 
 namespace BattleShip.BL.Abstarct.Interface
 {
-    public interface IGameService<T> where T: class
+    public interface IGameService<User,Game>
+        where User: class
+        where Game: class
+        
     {
-        void AddShip(Point Coordinate);
-        void ChangeTurn(T Player);
-        T CheckForWinner();
-        void Shot(T Player, T Enemy, Point Coordinate);
+        void AddShip(Game Game,User user, Point Coordinate);
+        void ChangeTurn(User Player, Game game);
+        User CheckForWinner(Game game);
+        void Shot(Game game,User Player, User Enemy, Point Coordinate,IStrategyShot<User> ShotContext);
     }
 }
