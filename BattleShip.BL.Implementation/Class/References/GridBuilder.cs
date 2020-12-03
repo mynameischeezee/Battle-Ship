@@ -13,7 +13,7 @@ namespace BattleShip.BL.Implementation.Class.GridLogic
     {
         public abstract void Reset();
         public abstract Grid CreateGrid(int size);
-        public abstract void AddShip(Point point, ShipType shipType, ShipOrientation shipOrientation);
+        public abstract void AddShip(Grid grid,Point point, ShipType shipType, ShipOrientation shipOrientation);
         public abstract Grid ReturnGrid();
         
     }

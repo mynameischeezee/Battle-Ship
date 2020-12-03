@@ -11,11 +11,15 @@ namespace BattleShip.BL.Implementation.Class
 {
     public class Grid : IObservable
     {
-        public CellState[] GridSpace;
-        private List<Ship> Ships;
+        public CellState[,] GridSpace;
+        public List<Ship> Ships;
         public List<IObserver> Observers;
-        public Grid(){ }
+        
 
+        public Grid()
+        {
+            Ships = new List<Ship>();
+        }
         public void AddShip(Ship ship)
         {
             Ships.Add(ship);
@@ -32,7 +36,7 @@ namespace BattleShip.BL.Implementation.Class
             }
             else
             {
-                GridSpace = new CellState[size];
+                GridSpace = new CellState[size,size];
             }    
         }
         public void AddObserver(IObserver observer)

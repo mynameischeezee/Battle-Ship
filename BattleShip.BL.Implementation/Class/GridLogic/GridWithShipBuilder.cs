@@ -16,7 +16,7 @@ namespace BattleShip.BL.Implementation.Class.GridLogic
             this.Reset();
         }
 
-        public override void AddShip(Point head, ShipType shipType, ShipOrientation shipOrientation)
+        public override void AddShip(Grid grid,Point head, ShipType shipType, ShipOrientation shipOrientation)
         {
             grid.AddShip(new Ship(shipType, shipOrientation, head));
         }

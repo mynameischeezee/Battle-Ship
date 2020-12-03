@@ -1,4 +1,9 @@
-﻿using BattleShip.BL.Abstarct.Interface;
+﻿using BattleShip.BL.Abstarct.Enum;
+using BattleShip.BL.Abstarct.Interface;
+using BattleShip.BL.Implementation.Class.GameLogic;
+using BattleShip.BL.Implementation.Class.GridLogic;
+using BattleShip.Exceptions;
+using BattleShipExceptions;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -8,11 +13,19 @@ using System.Threading.Tasks;
 
 namespace BattleShip.BL.Implementation.Class.ShotLogic
 {
-    public class UserShot : IStrategyShot<User>
+    public class UserShot : IStrategyShot<Game>
     {
-        public void Shot(User User, Point Coordinate)
+        GridService gridService = new GridService();
+        public void Shot(Game game, Point Coordinate)
         {
-            throw new NotImplementedException();
+            if (gridService.IsAvalibleToShot(game.Turn.PlayerGrid, Coordinate))
+            {
+                gridService.MarkShip(game.Turn.PlayerGrid, Coordinate);
+            }
+            else
+            {
+                throw new UnAvalibleCellException("This cell is already hitted, dead, or unvalible. Please choose another cell.");
+            }
         }
     }
 }

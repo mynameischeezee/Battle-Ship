@@ -9,6 +9,6 @@ namespace BattleShip.BL.Abstarct.Interface
 {
     public interface IStrategyShot<in T> where T : class
     {
-        void Shot(T User,Point Coordinate);
+        void Shot(T Game,Point Coordinate);
     }
 }

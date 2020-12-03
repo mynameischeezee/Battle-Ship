@@ -21,7 +21,6 @@ namespace BattleShip.BL.Implementation.Class
             Type = shipType;
             Orientation = orientation;
             CalculateShipPoints(head);
-
         }
         private void CalculateShipPoints(Point head)
         {

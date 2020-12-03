@@ -1,4 +1,6 @@
-﻿using BattleShip.BL.Abstarct.Interface;
+﻿using BattleShip.BL.Abstarct.Enum;
+using BattleShip.BL.Abstarct.Interface;
+using BattleShip.BL.Implementation.Class.GridLogic;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -10,11 +12,12 @@ namespace BattleShip.BL.Implementation.Class.GameLogic
 {
     public class GameService : IGameService<User,Game>
     {
-        IStrategyShot<User> ContextShot;
+        IStrategyShot<Game> ContextShot;
+        GridWithShipBuilder builder = new GridWithShipBuilder();
 
-        public void AddShip(Game Game, User user, Point Coordinate)
+        public void AddShip(Game Game, User user, Point Coordinate, ShipType shipType, ShipOrientation shipOrientation)
         {
-            throw new NotImplementedException();
+            builder.AddShip(user.PlayerGrid, Coordinate, shipType, shipOrientation);
         }
 
         public void ChangeTurn(User Player, Game game)
@@ -27,11 +30,10 @@ namespace BattleShip.BL.Implementation.Class.GameLogic
             throw new NotImplementedException();
         }
 
-        public void Shot(Game game, User Player, User Enemy, Point Coordinate, IStrategyShot<User> ContextShot)
+        public void Shot(Game game, Point Coordinate, IStrategyShot<Game> ContextShot)
         {
             this.ContextShot = ContextShot;
-            ContextShot.Shot(Player, Coordinate);
-            throw new NotImplementedException();
+            ContextShot.Shot(game, Coordinate);
         }
     }
 }

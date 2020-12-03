@@ -11,6 +11,9 @@ namespace BattleShip.BL.Implementation.Class
         public string Name;
         public Grid PlayerGrid;
         public Grid ShottedGrid;
-        public User() { }
+        public User(string name)
+        {
+            this.Name = name;
+        }
     }
 }

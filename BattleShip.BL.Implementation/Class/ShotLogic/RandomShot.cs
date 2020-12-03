@@ -1,4 +1,7 @@
 ﻿using BattleShip.BL.Abstarct.Interface;
+using BattleShip.BL.Implementation.Class.GameLogic;
+using BattleShip.BL.Implementation.Class.GridLogic;
+using BattleShipExceptions;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -8,11 +11,23 @@ using System.Threading.Tasks;
 
 namespace BattleShip.BL.Implementation.Class.ShotLogic
 {
-    public class RandomShot : IStrategyShot<User>
+    public class RandomShot : IStrategyShot<Game>
     {
-        public void Shot(User User, Point Coordinate)
+        private GridService gridService = new GridService();
+        private Random random = new Random();
+        
+        public void Shot(Game game, Point Coordinate)
         {
-            throw new NotImplementedException();
+            Coordinate.X = random.Next(0, game.BluePlayer.PlayerGrid.GridSpace.Length - 1);
+            Coordinate.Y = random.Next(0, game.BluePlayer.PlayerGrid.GridSpace.Length - 1);
+            if (gridService.IsAvalibleToShot(game.Turn.PlayerGrid, Coordinate))
+            {
+                gridService.MarkShip(game.Turn.PlayerGrid, Coordinate);
+            }
+            else
+            {
+                this.Shot(game, Coordinate);
+            }          
         }
     }
 }
