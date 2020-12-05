@@ -51,7 +51,6 @@
     <Compile Include="Class\GameLogic\GameConfiguration.cs" />
     <Compile Include="Class\GameLogic\GameService.cs" />
     <Compile Include="Class\GridLogic\Grid.cs" />
-    <Compile Include="Class\References\GridBuilder.cs" />
     <Compile Include="Class\GridLogic\GridService.cs" />
     <Compile Include="Class\GridLogic\GridWithShipBuilder.cs" />
     <Compile Include="Class\Ship.cs" />

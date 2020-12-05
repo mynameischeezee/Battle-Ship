@@ -35,6 +35,12 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BattleShip.BL.Abstarct\BattleShip.BL.Abstarct.csproj">
@@ -57,6 +64,10 @@
     <ProjectReference Include="..\BattleShip.BL.Implementation\BattleShip.BL.Implementation.csproj">
       <Project>{eb0f149c-21a1-4499-b63f-5536ac7c1e44}</Project>
       <Name>BattleShip.BL.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BattleShip.Controller\BattleShip.Controller.csproj">
+      <Project>{02673740-5D64-4046-A63D-60D8556ADEEF}</Project>
+      <Name>BattleShip.Controller</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

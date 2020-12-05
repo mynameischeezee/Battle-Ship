@@ -1,21 +1,16 @@
 ﻿using BattleShip.BL.Abstarct.Interface;
 using BattleShip.BL.Implementation.Class.GameLogic;
 using BattleShip.BL.Implementation.Class.GridLogic;
-using BattleShipExceptions;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BattleShip.BL.Implementation.Class.ShotLogic
 {
     public class RandomShot : IStrategyShot<Game>
     {
-        private GridService gridService = new GridService();
+        private IGridService<Grid> gridService = new GridService();
         private Random random = new Random();
-        
+
         public void Shot(Game game, Point Coordinate)
         {
             Coordinate.X = random.Next(0, game.BluePlayer.PlayerGrid.GridSpace.Length - 1);
@@ -27,7 +22,7 @@ namespace BattleShip.BL.Implementation.Class.ShotLogic
             else
             {
                 this.Shot(game, Coordinate);
-            }          
+            }
         }
     }
 }

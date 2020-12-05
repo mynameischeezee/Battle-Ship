@@ -1,17 +1,12 @@
 ﻿using BattleShip.BL.Abstarct.Enum;
 using BattleShip.BL.Abstarct.Interface;
 using BattleShip.BL.Implementation.Class.GridLogic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BattleShip.BL.Implementation.Class.GameLogic
 {
     public class GameConfiguration : IGameConfiguration<Game>
     {
-        public GridBuilder builder;
+        private IGridBuilder<Grid> builder;
         public GameConfiguration()
         {
             builder = new GridWithShipBuilder();
@@ -33,7 +28,5 @@ namespace BattleShip.BL.Implementation.Class.GameLogic
             game.BluePlayer.PlayerGrid = builder.CreateGrid(size);
             game.BluePlayer.ShottedGrid = builder.CreateGrid(size);
         }
-
-        
     }
 }

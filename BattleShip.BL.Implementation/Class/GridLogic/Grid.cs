@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleShip.BL.Abstarct.Enum;
+﻿using BattleShip.BL.Abstarct.Enum;
 using BattleShip.BL.Abstarct.Interface;
 using BattleShip.Exceptions;
+using System.Collections.Generic;
 
 namespace BattleShip.BL.Implementation.Class
 {
@@ -14,7 +10,6 @@ namespace BattleShip.BL.Implementation.Class
         public CellState[,] GridSpace;
         public List<Ship> Ships;
         public List<IObserver> Observers;
-        
 
         public Grid()
         {
@@ -36,19 +31,17 @@ namespace BattleShip.BL.Implementation.Class
             }
             else
             {
-                GridSpace = new CellState[size,size];
-            }    
+                GridSpace = new CellState[size, size];
+            }
         }
         public void AddObserver(IObserver observer)
         {
             Observers.Add(observer);
         }
-
         public void RemoveObserver(IObserver observer)
         {
             Observers.Remove(observer);
         }
-
         public void Notify()
         {
             foreach (IObserver observer in Observers)

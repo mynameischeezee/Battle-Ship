@@ -1,9 +1,4 @@
 ﻿using BattleShip.BL.Abstarct.Enum;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BattleShip.BL.Implementation.Class.GameLogic
 {
@@ -14,11 +9,13 @@ namespace BattleShip.BL.Implementation.Class.GameLogic
         public User Turn;
         public GameState GameStatus;
         public User Winner;
+        public User NextTurn;
         public Game(User Blue, User Red)
         {
             this.BluePlayer = Blue;
             this.RedPlayer = Red;
             this.Turn = Blue;
+            this.NextTurn = Red;
             this.GameStatus = GameState.Paused;
         }
     }

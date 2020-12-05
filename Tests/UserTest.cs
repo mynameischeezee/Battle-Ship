@@ -1,6 +1,5 @@
-﻿using System;
+﻿using BattleShip.BL.Implementation.Class;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BattleShip.BL.Implementation.Class;
 
 namespace Tests
 {

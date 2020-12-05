@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BattleShip.BL.Abstarct.Interface
+﻿namespace BattleShip.BL.Abstarct.Interface
 {
     public interface IObservable
     {

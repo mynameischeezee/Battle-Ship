@@ -47,21 +47,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enum\CellState.cs" />
-    <Compile Include="Enum\GameState.cs" />
-    <Compile Include="Enum\ShipOrientation.cs" />
-    <Compile Include="Enum\ShipState.cs" />
-    <Compile Include="Enum\ShipType.cs" />
-    <Compile Include="Interface\IGameConfiguration.cs" />
-    <Compile Include="Interface\IGameService.cs" />
-    <Compile Include="Interface\IObservable.cs" />
-    <Compile Include="Interface\IObserver.cs" />
-    <Compile Include="Interface\IStrategyShot.cs" />
+    <Compile Include="Interface\GridAbstraction\IGridBuilder.cs" />
+    <Compile Include="Enum\GridEnum\CellState.cs" />
+    <Compile Include="Enum\GameEnum\GameState.cs" />
+    <Compile Include="Enum\ShipEnum\ShipOrientation.cs" />
+    <Compile Include="Enum\ShipEnum\ShipState.cs" />
+    <Compile Include="Enum\ShipEnum\ShipType.cs" />
+    <Compile Include="Interface\GameAbstraction\IGameConfiguration.cs" />
+    <Compile Include="Interface\GameAbstraction\IGameService.cs" />
+    <Compile Include="Interface\GridAbstraction\IGridService.cs" />
+    <Compile Include="Interface\ObserverPatternAbstraction\IObservable.cs" />
+    <Compile Include="Interface\ObserverPatternAbstraction\IObserver.cs" />
+    <Compile Include="Interface\StrategyPatternAbstraction\IStrategyShot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Struct\CellCharacter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
