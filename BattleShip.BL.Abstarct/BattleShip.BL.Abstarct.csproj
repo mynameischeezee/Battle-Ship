@@ -61,6 +61,7 @@
     <Compile Include="Interface\StrategyPatternAbstraction\IStrategyShot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Struct\CellCharacter.cs" />
+    <Compile Include="Struct\ShipCharacter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

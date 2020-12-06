@@ -14,6 +14,7 @@ namespace BattleShip.BL.Implementation.Class
         {
             Type = shipType;
             Orientation = orientation;
+            this.ShipPosition = new Dictionary<Point, ShipState>();
             CalculateShipPoints(head);
             State = ShipState.UnDamaged;
         }
@@ -27,6 +28,34 @@ namespace BattleShip.BL.Implementation.Class
                     Coordinate.X += i;
                     this.ShipPosition.Add(Coordinate, ShipState.UnDamaged);
                 }
+            }
+            else if (this.Orientation == ShipOrientation.Vertical)
+            {
+                for (int i = 0; i < (int)(Type); i++)
+                {
+                    Point Coordinate = head;
+                    Coordinate.Y += i;
+                    this.ShipPosition.Add(Coordinate, ShipState.UnDamaged);
+                }
+            }
+        }
+        public void CheckIfDead()
+        {
+            int HittedShipPartsAmount = 0;
+            foreach (ShipState shipState in ShipPosition.Values)
+            {
+                if (shipState == ShipState.Damaged)
+                {
+                    HittedShipPartsAmount += 1;
+                }
+            }
+            if (HittedShipPartsAmount == ShipPosition.Values.Count)
+            {
+                foreach (Point point in ShipPosition.Keys)
+                {
+                    ShipPosition[point] = ShipState.Dead;
+                }
+                State = ShipState.Dead;
             }
         }
     }

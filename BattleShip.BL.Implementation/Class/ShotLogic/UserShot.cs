@@ -11,9 +11,10 @@ namespace BattleShip.BL.Implementation.Class.ShotLogic
         private IGridService<Grid> gridService = new GridService();
         public void Shot(Game game, Point Coordinate)
         {
-            if (gridService.IsAvalibleToShot(game.Turn.PlayerGrid, Coordinate))
+            if (gridService.IsAvalibleToShot(game.NextTurn.PlayerGrid, Coordinate))
             {
-                gridService.MarkShip(game.Turn.PlayerGrid, Coordinate);
+                gridService.MarkShip(game.Turn.ShottedGrid, Coordinate);
+                gridService.MarkShip(game.NextTurn.PlayerGrid, Coordinate);
             }
             else
             {

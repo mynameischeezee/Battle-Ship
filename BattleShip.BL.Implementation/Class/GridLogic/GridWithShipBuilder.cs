@@ -17,8 +17,9 @@ namespace BattleShip.BL.Implementation.Class.GridLogic
         }
         public Grid CreateGrid(int size)
         {
+            this.Reset();
             grid.CreateBySize(size);
-            return this.ReturnGrid();
+            return this.grid;
         }
         public void Reset()
         {
@@ -28,7 +29,7 @@ namespace BattleShip.BL.Implementation.Class.GridLogic
         {
             Grid result = this.grid;
             this.Reset();
-            return this.grid;
+            return result;
         }
     }
 }

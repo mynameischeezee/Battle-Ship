@@ -1,9 +1,9 @@
 ﻿using BattleShip.BL.Abstarct.Enum;
 namespace BattleShip.BL.Abstarct.Interface
 {
-    public interface IGameConfiguration<T> where T : class
+    public interface IGameConfiguration<Game> where Game : class
     {
-        GameState StartGame(T game);
-        GameState FinishGame(T game);
+        GameState StartGame(Game game);
+        GameState FinishGame(Game game);
     }
 }

@@ -21,6 +21,8 @@ namespace BattleShip.Controller
             Red = new User(RedName);
             game = new Game(this.Blue, this.Red);
             Configuration.StartGame(game);
+            game.Turn = Blue;
+            game.NextTurn = Red;
             return $"Game created." +
                 $"{Environment.NewLine}" +
                 $"Players:" +
@@ -33,15 +35,15 @@ namespace BattleShip.Controller
         {
             Configuration.BuildGrid(game, size);
         }
-        public void Shot(string Choice, Point Coordinate)
+        public void Shot(int Choice, Point Coordinate)
         {
             switch (Choice)
             {
-                case ("1"): { Service.Shot(game, Coordinate, new LineShot()); break; }
-                case ("2"): { Service.Shot(game, Coordinate, new NearShot()); break; }
-                case ("3"): { Service.Shot(game, Coordinate, new RandomShot()); break; }
-                case ("4"): { Service.Shot(game, Coordinate, new UserShot()); break; }
-                default: { throw new WrongShotChoice("Wrong choice given, use 1-4 to select shot type"); }
+                case (1): { Service.Shot(game, Coordinate, new LineShot()); break; }
+                case (2): { Service.Shot(game, Coordinate, new NearShot()); break; }
+                case (3): { Service.Shot(game, Coordinate, new RandomShot()); break; }
+                case (4): { Service.Shot(game, Coordinate, new UserShot()); break; }
+                //default: { throw new WrongShotChoice("Wrong choice given, use 1-4 to select shot type"); }
             }
         }
         public void AddShip(Point Head, ShipOrientation orientation, ShipType type)

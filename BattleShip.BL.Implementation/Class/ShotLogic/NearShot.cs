@@ -12,7 +12,6 @@ namespace BattleShip.BL.Implementation.Class.ShotLogic
         {
             if (gridService.IsAvalibleToShot(game.Turn.PlayerGrid, Coordinate))
             {
-                gridService.MarkShip(game.Turn.PlayerGrid, Coordinate);
             }
             else
             {

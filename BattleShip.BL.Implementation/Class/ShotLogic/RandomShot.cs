@@ -13,11 +13,12 @@ namespace BattleShip.BL.Implementation.Class.ShotLogic
 
         public void Shot(Game game, Point Coordinate)
         {
-            Coordinate.X = random.Next(0, game.BluePlayer.PlayerGrid.GridSpace.Length - 1);
-            Coordinate.Y = random.Next(0, game.BluePlayer.PlayerGrid.GridSpace.Length - 1);
-            if (gridService.IsAvalibleToShot(game.Turn.PlayerGrid, Coordinate))
+            Coordinate.X = random.Next(0, game.BluePlayer.PlayerGrid.GridSpace.GetLength(0)- 1);
+            Coordinate.Y = random.Next(0, game.BluePlayer.PlayerGrid.GridSpace.GetLength(1) - 1);
+            if (gridService.IsAvalibleToShot(game.NextTurn.PlayerGrid, Coordinate))
             {
-                gridService.MarkShip(game.Turn.PlayerGrid, Coordinate);
+                gridService.MarkShip(game.Turn.ShottedGrid, Coordinate);
+                gridService.MarkShip(game.NextTurn.PlayerGrid, Coordinate);
             }
             else
             {

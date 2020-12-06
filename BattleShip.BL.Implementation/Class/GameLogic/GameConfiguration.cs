@@ -24,8 +24,8 @@ namespace BattleShip.BL.Implementation.Class.GameLogic
         public void BuildGrid(Game game, int size)
         {
             game.RedPlayer.PlayerGrid = builder.CreateGrid(size);
-            game.RedPlayer.ShottedGrid = builder.CreateGrid(size);
             game.BluePlayer.PlayerGrid = builder.CreateGrid(size);
+            game.RedPlayer.ShottedGrid = builder.CreateGrid(size);
             game.BluePlayer.ShottedGrid = builder.CreateGrid(size);
         }
     }

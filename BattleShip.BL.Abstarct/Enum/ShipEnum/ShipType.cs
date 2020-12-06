@@ -2,9 +2,9 @@
 {
     public enum ShipType
     {
-        Huge = 3,
-        Big = 2,
-        Medium = 1,
-        Small = 0
+        Huge = 4,
+        Big = 3,
+        Medium = 2,
+        Small = 1
     }
 }
